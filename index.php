@@ -22,13 +22,10 @@ include('templates/header.php');
 								  <!-- Nav tabs -->
 								   <ul class="nav nav-tabs" role="tablist">
 								      <li role="presentation" class="active">
-								      	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Flights</a>
+								      	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Vol</a>
 								      </li>
 								      <li role="presentation">
-								    	   <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hotels</a>
-								      </li>
-								      <li role="presentation">
-								    	   <a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Packages</a>
+								    	   <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hôtel</a>
 								      </li>
 								   </ul>
 
@@ -36,44 +33,45 @@ include('templates/header.php');
 									<div class="tab-content">
 									 <div role="tabpanel" class="tab-pane active" id="flights">
 										<div class="row">
+                                            <form action="">
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
-													<label for="from">From:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
+													<label for="from">Départ:</label>
+													<input type="text" class="form-control" id="from-place" required>
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
-													<label for="from">To:</label>
-													<input type="text" class="form-control" id="to-place" placeholder="Tokyo, Japan"/>
+													<label for="from">Arrivée:</label>
+													<input type="text" class="form-control" id="to-place" required>
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt alternate">
 												<div class="input-field">
-													<label for="date-start">Check In:</label>
+													<label for="date-start">Date de départ:</label>
 													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt alternate">
 												<div class="input-field">
-													<label for="date-end">Check Out:</label>
+													<label for="date-end">Date d'arrivée:</label>
 													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
 												</div>
 											</div>
 											<div class="col-sm-12 mt">
 												<section>
-													<label for="class">Class:</label>
+													<label for="class">Classe d'avion:</label>
 													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>Economy</option>
-														<option value="economy">Economy</option>
-														<option value="first">First</option>
-														<option value="business">Business</option>
+														<option value="" disabled selected>Economique</option>
+														<option value="economy">Affaire</option>
+														<option value="first">Première</option>
+														<option value="business">Economique première</option>
 													</select>
 												</section>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
-													<label for="class">Adult:</label>
+													<label for="class">Adultes:</label>
 													<select class="cs-select cs-skin-border">
 														<option value="" disabled selected>1</option>
 														<option value="1">1</option>
@@ -83,9 +81,10 @@ include('templates/header.php');
 													</select>
 												</section>
 											</div>
+
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
-													<label for="class">Children:</label>
+													<label for="class">Enfants:</label>
 													<select class="cs-select cs-skin-border">
 														<option value="" disabled selected>1</option>
 														<option value="1">1</option>
@@ -95,10 +94,19 @@ include('templates/header.php');
 													</select>
 												</section>
 											</div>
+
+                                                <div class="col-sm-12 col-sm-6 mt">
+                                                    <section>
+                                                        <input type="checkbox" id="myCheck"  onclick="myFunction()">  &nbsp;<label for="class">Mes dates sont flexibles (+/- 3 jours)</label>
+                                                    </section>
+                                                </div>
+
+
 											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Search Flight">
+												<input type="submit" class="btn btn-primary btn-block" value="Voir nos offres">
 											</div>
 										</div>
+                                     </form>
 									 </div>
 
 									 <div role="tabpanel" class="tab-pane" id="hotels">
@@ -161,84 +169,16 @@ include('templates/header.php');
 											</div>
 										</div>
 									 </div>
-
-									 <div role="tabpanel" class="tab-pane" id="packages">
-									 	<div class="row">
-											<div class="col-xxs-12 col-xs-6 mt">
-												<div class="input-field">
-													<label for="from">City:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<div class="input-field">
-													<label for="from">Destination:</label>
-													<input type="text" class="form-control" id="to-place" placeholder="Tokyo, Japan"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-start">Departs:</label>
-													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-end">Return:</label>
-													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-sm-12 mt">
-												<section>
-													<label for="class">Rooms:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="economy">1</option>
-														<option value="first">2</option>
-														<option value="business">3</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Adult:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Children:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Search Packages">
-											</div>
-										</div>
-									 </div>
 									</div>
 
 								</div>
 							</div>
 							<div class="desc2 animate-box">
 								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
-									<p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p>
-									<h2>Exclusive Limited Time Offer</h2>
-									<h3>Fly to Hong Kong via Los Angeles, USA</h3>
-									<span class="price">$599</span>
-									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
+
+                                    <h2>Une <b>omra</b> sans se ruiner</h2>
+									<h3>Accomplissez la omra selon la sunna, en toute sérénité</h3>
+								    <p><a class="btn btn-primary btn-lg" href="#">En savoir plus</a></p>
 								</div>
 							</div>
 						</div>
@@ -248,54 +188,6 @@ include('templates/header.php');
 
 		</div>
 		
-		<div id="fh5co-tours" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Hot Tours</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="images/place-1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<div class="desc">
-								<span></span>
-								<h3>New York</h3>
-								<span>3 nights + Flight 5*Hotel</span>
-								<span class="price">$1,000</span>
-								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="images/place-2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<div class="desc">
-								<span></span>
-								<h3>Philippines</h3>
-								<span>4 nights + Flight 5*Hotel</span>
-								<span class="price">$1,000</span>
-								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="images/place-3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<div class="desc">
-								<span></span>
-								<h3>Hongkong</h3>
-								<span>2 nights + Flight 4*Hotel</span>
-								<span class="price">$1,000</span>
-								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 text-center animate-box">
-						<p><a class="btn btn-primary btn-outline btn-lg" href="#">See All Offers <i class="icon-arrow-right22"></i></a></p>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<div id="fh5co-features">
 			<div class="container">
@@ -304,12 +196,12 @@ include('templates/header.php');
 
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-hotairballoon"></i>
+								<i class="icon-map"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Family Travel</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<h3>Confort et proximité.</h3>
+								<p>A Médine et à la Mecque, vous logerez dans nos hôtels 3 et 4 étoiles, situés à quelques minutes des deux Mosquées Sacrées.</p>
+
 							</div>
 						</div>
 
@@ -318,24 +210,22 @@ include('templates/header.php');
 					<div class="col-md-4 animate-box">
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-search"></i>
+								<i class="icon-paper-plane"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Travel Plans</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<h3>Compagnies internationales.</h3>
+								<p>Partenaires de notre agence, vous voyagerez avec des compagnies régulières telles que la Saudia Airlines, la Royal Jordanian Airlines ou encore Egyptair.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-wallet"></i>
+								<i class="icon-user"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Honeymoon</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<h3>Un encadrement de qualité.</h3>
+								<p>Notre équipe vous suivra tout au long de votre séjour. Vous serez formés sur place aux rites du pèlerinage et guidés lors de l'accomplissement de ceux-ci.</p>
 							</div>
 						</div>
 					</div>
@@ -345,12 +235,11 @@ include('templates/header.php');
 
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-wine"></i>
+								<i class="icon-accessibility"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Business Travel</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<h3>Votre Omra, mais pas seulement.</h3>
+								<p>Vous visiterez des lieux chargés d’histoire : la Bataille d’Uhud, la Mosquée de Quba, le Cimetière du Baqi.</p>
 							</div>
 						</div>
 
@@ -359,12 +248,11 @@ include('templates/header.php');
 					<div class="col-md-4 animate-box">
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-genius"></i>
+								<i class="icon-wallet2"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Solo Travel</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<h3>Un prix attractif</h3>
+								<p>A remplir.</p>
 							</div>
 						</div>
 
@@ -375,9 +263,8 @@ include('templates/header.php');
 								<i class="icon-chat"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Explorer</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<h3>Explorer, apprenez</h3>
+								<p>Vous assisterez à des cours et des conférences dispensés par les plus grands savants de notre époque, au sein du Haram de Médine et de Mekka.</p>
 							</div>
 						</div>
 					</div>
@@ -386,155 +273,76 @@ include('templates/header.php');
 		</div>
 
 		
-		<div id="fh5co-destination">
-			<div class="tour-fluid">
-				<div class="row">
-					<div class="col-md-12">
-						<ul id="fh5co-destination-list" class="animate-box">
-							<li class="one-forth text-center" style="background-image: url(images/place-1.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Los Angeles</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-2.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Hongkong</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-3.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Italy</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-4.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Philippines</h2>
-									</div>
-								</a>
-							</li>
-
-							<li class="one-forth text-center" style="background-image: url(images/place-5.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Japan</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-half text-center">
-								<div class="title-bg">
-									<div class="case-studies-summary">
-										<h2>Most Popular Destinations</h2>
-										<span><a href="#">View All Destinations</a></span>
-									</div>
-								</div>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-6.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Paris</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-7.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Singapore</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-8.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Madagascar</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-9.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Egypt</h2>
-									</div>
-								</a>
-							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-10.jpg); ">
-								<a href="#">
-									<div class="case-studies-summary">
-										<h2>Indonesia</h2>
-									</div>
-								</a>
-							</li>
-						</ul>		
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<div id="fh5co-blog-section" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Recent From Blog</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+						<h3>Choisissez votre offre</h3>
+						<p>Avec possibilité de paiement en plusieurs fois</p>
 					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">30% Discount to Travel All Around the World</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">Planning for Vacation</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">Visit Tokyo Japan</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
+					<div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="fh5co-blog animate-box">
+                            <a href="#"><img class="img-responsive" src="https://oumma.com/wp-content/uploads/2017/02/hajj-758x569.jpg" alt=""></a>
+                            <div class="blog-text">
+                                <div class="prod-title">
+                                    <h3 class="text-center"><a href="#"><b>DECEMBRE</b></a></h3>
+                                    Du 20 au 30
+                                    <span class="comment"><a href="">1 090<i class="icon-coin-euro"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="fh5co-blog animate-box">
+                            <a href="#"><img class="img-responsive" src="https://oumma.com/wp-content/uploads/2017/02/hajj-758x569.jpg" alt=""></a>
+                            <div class="blog-text">
+                                <div class="prod-title">
+                                    <h3 class="text-center"><a href="#"><b>JANVIER</b></a></h3>
+                                    Du 04 au 14
+                                    <span class="comment"><a href="">949<i class="icon-coin-euro"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="fh5co-blog animate-box">
+                            <a href="#"><img class="img-responsive" src="https://oumma.com/wp-content/uploads/2017/02/hajj-758x569.jpg" alt=""></a>
+                            <div class="blog-text">
+                                <div class="prod-title">
+                                    <h3 class="text-center"><a href="#"><b>MARS</b></a></h3>
+                                    du 15 au 25 (+/- 2jrs)
+                                    <span class="comment"><a href="">949<i class="icon-coin-euro"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="fh5co-blog animate-box">
+                            <a href="#"><img class="img-responsive" src="https://oumma.com/wp-content/uploads/2017/02/hajj-758x569.jpg" alt=""></a>
+                            <div class="blog-text">
+                                <div class="prod-title">
+                                    <h3 class="text-center"><a href="#"><b>AVRIL</b></a></h3>
+                                    du 20 au 30 (+/- 2jrs)
+                                    <span class="comment"><a href="">949<i class="icon-coin-euro"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 					<div class="clearfix visible-md-block"></div>
 				</div>
 
 				<div class="col-md-12 text-center animate-box">
-					<p><a class="btn btn-primary btn-outline btn-lg" href="#">See All Post <i class="icon-arrow-right22"></i></a></p>
+					<p><a class="btn btn-primary btn-outline btn-lg" href="#">Indisponible? Crée ton offre sur mesure <i class="icon-arrow-right22"></i></a></p>
 				</div>
 
 			</div>
@@ -544,7 +352,7 @@ include('templates/header.php');
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Happy Clients</h2>
+					<h2>Avis client</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -552,9 +360,9 @@ include('templates/header.php');
 					<div class="box-testimony animate-box">
 						<blockquote>
 							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+							<p>&ldquo; Ce texte généré aléatoirement (lorem ipsum) peut être utilisé dans vos maquettes (webdesign, sites internet, livres, affiches...) gratuitement. Ce texte est entièrement libre de droit. &rdquo;</p>
 						</blockquote>
-						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+						<p class="author">Nom Prenom <span class="subtext">19 ans</span></p>
 					</div>
 					
 				</div>
@@ -562,9 +370,9 @@ include('templates/header.php');
 					<div class="box-testimony animate-box">
 						<blockquote>
 							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+                            <p>&ldquo; Ce texte généré aléatoirement (lorem ipsum) peut être utilisé dans vos maquettes (webdesign, sites internet, livres, affiches...) gratuitement. Ce texte est entièrement libre de droit. &rdquo;</p>
+                        </blockquote>
+                        <p class="author">Nom Prenom <span class="subtext">19 ans</span></p>
 					</div>
 					
 					
@@ -573,9 +381,9 @@ include('templates/header.php');
 					<div class="box-testimony animate-box">
 						<blockquote>
 							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, Founder <a href="#">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+                            <p>&ldquo; Ce texte généré aléatoirement (lorem ipsum) peut être utilisé dans vos maquettes (webdesign, sites internet, livres, affiches...) gratuitement. Ce texte est entièrement libre de droit. &rdquo;</p>
+                        </blockquote>
+                        <p class="author">Nom Prenom <span class="subtext">19 ans</span></p>
 					</div>
 					
 				</div>
