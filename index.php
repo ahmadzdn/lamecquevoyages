@@ -11,180 +11,47 @@ include('templates/header.php');
 		<?PHP include('templates/menu.php'); ?>
 
 		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/background.jpeg);">
-				<div class="desc">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-5 col-md-5">
-								<div class="tabulation animate-box">
 
-								  <!-- Nav tabs -->
-								   <ul class="nav nav-tabs" role="tablist">
-								      <li role="presentation" class="active">
-								      	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Vol</a>
-								      </li>
-								      <li role="presentation">
-								    	   <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hôtel</a>
-								      </li>
-								   </ul>
+            <div id="carousel-example-generic2" data-interval="3000" data-pause="null" class="carousel slide carousel-fullscreen carousel-fade" data-ride="carousel">
 
-								   <!-- Tab panes -->
-									<div class="tab-content">
-									 <div role="tabpanel" class="tab-pane active" id="flights">
-										<div class="row">
-                                            <form action="">
-											<div class="col-xxs-12 col-xs-6 mt">
-												<div class="input-field">
-													<label for="from">Départ:</label>
-													<input type="text" class="form-control" id="from-place" required>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<div class="input-field">
-													<label for="from">Arrivée:</label>
-													<input type="text" class="form-control" id="to-place" required>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-start">Date de départ:</label>
-													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-end">Date d'arrivée:</label>
-													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-sm-12 mt">
-												<section>
-													<label for="class">Classe d'avion:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>Economique</option>
-														<option value="economy">Affaire</option>
-														<option value="first">Première</option>
-														<option value="business">Economique première</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Adultes:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpLlH3r_bQvbajkxla69nzcVrbHQ5DOmvx36f1pgpzIWoWBxTLmQ');">
+                        <div class="overlay"></div>
+                        <div class="carousel-caption">
+                            <h1 class="super-heading">Bootstrap Carousel Guide</h1>
+                            <p class="super-paragraph">This is a demo for the <a href="https://bootstrapious.com/p/bootstrap-carousel">Bootstrap Carousel Guide</a> by <a href="https://bootstrapious.com">Bootstrapious.com</a>.</p>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('img/carousel2.jpg');">
+                        <div class="overlay"></div>
+                        <div class="carousel-caption">
+                            <h1 class="super-heading">Lorem ipsum dolor color</h1>
+                            <p class="super-paragraph">This is a demo for the Bootstrap Carousel Guide.</p>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('http://newwallpapershd.com/wp-content/uploads/2014/09/makkah-live-wallpaper-mosque-Photo.jpg');">
+                        <div class="overlay"></div>
+                        <div class="carousel-caption">
+                            <h1 class="super-heading">TEST</h1>
+                            <p>TEST DE TEXTE</p>
+                        </div>
+                    </div>
+                </div>
 
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Enfants:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
 
-                                                <div class="col-sm-12 col-sm-6 mt">
-                                                    <section>
-                                                        <input type="checkbox" id="myCheck"  onclick="myFunction()">  &nbsp;<label for="class">Mes dates sont flexibles (+/- 3 jours)</label>
-                                                    </section>
-                                                </div>
+        </div>
 
-
-											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Voir nos offres">
-											</div>
-										</div>
-                                     </form>
-									 </div>
-
-									 <div role="tabpanel" class="tab-pane" id="hotels">
-									 	<div class="row">
-											<div class="col-xxs-12 col-xs-12 mt">
-												<div class="input-field">
-													<label for="from">City:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-start">Return:</label>
-													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-end">Check Out:</label>
-													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-sm-12 mt">
-												<section>
-													<label for="class">Rooms:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="economy">1</option>
-														<option value="first">2</option>
-														<option value="business">3</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Adult:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Children:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Search Hotel">
-											</div>
-										</div>
-									 </div>
-									</div>
-
-								</div>
-							</div>
-							<div class="desc2 animate-box">
-								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
-
-                                    <h2>Une <b>omra</b> sans se ruiner</h2>
-									<h3>Accomplissez la omra selon la sunna, en toute sérénité</h3>
-								    <p><a class="btn btn-primary btn-lg" href="#">En savoir plus</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 		</div>
 		
