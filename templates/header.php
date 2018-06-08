@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="css/cs-skin-border.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <link href='css/custom.css' rel='stylesheet' type='text/css'>
 
 
     <!-- Modernizr JS -->
