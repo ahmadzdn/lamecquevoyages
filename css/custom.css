@@ -2,6 +2,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.presentation_pays{
+    overflow:scroll;
+    height:200px;
+    border:1px solid grey;
+    border-bottom:4px solid grey;
+    width:100%;
+    padding:10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
 /* original solution by https://codepen.io/Rowno/pen/Afykb */
 
 .carousel-fade .carousel-inner .item {
@@ -70,13 +80,17 @@ h1,h2,h3,h4 {
     font-weight: 700;
 }
 
+
+
 .super-heading {
     font-size: 70px; 
+    color:  white;
 }
 
 
 .super-paragraph {
     font-size: 30px; font-weight: 300;
+    color: white;
 }
 
 .carousel-caption .super-paragraph a,

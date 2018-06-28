@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ 
+<title>...</title>
+ 
+</head>
+ 
+<body>
+ 
+<div>
+	<label for="test" id="mess">Trouvez Le nombre mystère entre 0 et 100.</label><br />
+	<input type="text" id="test" size="3" />
+	<input type ="button" id="go" value="résultat" />
+</div>
+ 
+<script type="text/javascript">
+ 
+for(var i=0,t=[];i<document.getElementsByTagName("*").length;i++){
+	t[document.getElementsByTagName("*")[i].id]=document.getElementsByTagName("*")[i]
+}
+ 
+var has = Math.floor(Math.random()*101);
+var plus=1;
+ 
+t.go.onclick=function(){
+	if(this.value!="résultat"){
+		t.mess.firstChild.data="Trouvez Le nombre mystère entre 0 et 100."
+		t.test.value="";
+		this.value="résultat";
+		};
+	if(!t.test.value || isNaN(t.test.value)){
+		return
+	};
+ 
+	if(t.test.value < has){
+		t.mess.firstChild.data="plus grand";
+		plus++;
+	}
+	if(t.test.value > has){
+		t.mess.firstChild.data="plus petit";
+		plus++;
+	}
+	if(t.test.value == has){
+		t.mess.firstChild.data="Bravo";
+		this.value="Nouvelle partie";
+		has = Math.floor(Math.random()*101);
+		alert("Nombre de coups: " + plus);
+		plus=1;
+	}
+}
+ 
+</script>
+ 
+</body>
+</html>

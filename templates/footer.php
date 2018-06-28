@@ -2,43 +2,29 @@
     <div id="footer">
         <div class="container">
             <div class="row row-bottom-padded-md">
-               
+
                 <div class="col-md-3 col-sm-3 col-xs-12 fh5co-footer-link">
                     <h3>Omra</h3>
                     <ul>
-                        <li><a href="#">Manila flights</a></li>
-                        <li><a href="#">Dubai flights</a></li>
-                        <li><a href="#">Bangkok flights</a></li>
-                        <li><a href="#">Tokyo Flight</a></li>
-                        <li><a href="#">New York Flights</a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 fh5co-footer-link">
                     <h3>Hajj</h3>
                     <ul>
-                        <li><a href="#">Boracay Hotel</a></li>
-                        <li><a href="#">Dubai Hotel</a></li>
-                        <li><a href="#">Singapore Hotel</a></li>
-                        <li><a href="#">Manila Hotel</a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 fh5co-footer-link">
                     <h3>Séjour Ethique</h3>
                     <ul>
-                        <li><a href="#">Beaches</a></li>
-                        <li><a href="#">Family Travel</a></li>
-                        <li><a href="#">Budget Travel</a></li>
-                        <li><a href="#">Food &amp; Drink</a></li>
-                        <li><a href="#">Honeymoon and Romance</a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 fh5co-footer-link">
                     <h3>Information générale</h3>
                     <ul>
-                        <li><a href="#">Boracay Beach</a></li>
-                        <li><a href="#">Dubai</a></li>
-                        <li><a href="#">Singapore</a></li>
-                        <li><a href="#">Hongkong</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -48,10 +34,8 @@
                         <a href="#"><i class="icon-twitter2"></i></a>
                         <a href="#"><i class="icon-facebook2"></i></a>
                         <a href="#"><i class="icon-instagram"></i></a>
-                        <a href="#"><i class="icon-dribbble2"></i></a>
-                        <a href="#"><i class="icon-youtube"></i></a>
                     </p>
-                    <p>Copyright 2016 Free Html5 <a href="#">Module</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                    <p>Copyright 2018. All Rights Reserved.</a></p>
                 </div>
             </div>
         </div>
